@@ -1,0 +1,159 @@
+2025-08-22 03:21:46,597 - app.services.auth_service - ERROR - Error sending OTP: Error 61 connecting to localhost:6379. Connection refused.
+2025-08-22 03:21:46,598 - app.api.v1.auth - ERROR - Error sending OTP: Error 61 connecting to localhost:6379. Connection refused.
+2025-08-22 03:21:59,342 - app.services.auth_service - ERROR - Error sending OTP: Error 61 connecting to localhost:6379. Connection refused.
+2025-08-22 03:21:59,342 - app.api.v1.auth - ERROR - Error sending OTP: Error 61 connecting to localhost:6379. Connection refused.
+2025-08-22 03:23:28,856 - app.services.auth_service - INFO - OTP for +1234567890: 060267
+2025-08-22 03:24:18,598 - app.services.auth_service - INFO - OTP for 03036629101: 872740
+2025-08-22 03:25:32,551 - app.services.auth_service - ERROR - Error creating user: 'password' is an invalid keyword argument for User
+2025-08-22 03:25:32,805 - app.services.auth_service - ERROR - Error verifying OTP: 'password' is an invalid keyword argument for User
+2025-08-22 03:25:32,805 - app.api.v1.auth - ERROR - Error verifying OTP: 'password' is an invalid keyword argument for User
+2025-08-22 03:25:42,747 - app.services.auth_service - INFO - OTP for 03036629101: 181614
+2025-08-22 03:26:26,375 - app.services.auth_service - ERROR - Error creating user: 'password' is an invalid keyword argument for User
+2025-08-22 03:26:26,606 - app.services.auth_service - ERROR - Error verifying OTP: 'password' is an invalid keyword argument for User
+2025-08-22 03:26:26,606 - app.api.v1.auth - ERROR - Error verifying OTP: 'password' is an invalid keyword argument for User
+2025-08-22 03:26:48,818 - app.services.auth_service - ERROR - Error verifying OTP: Invalid OTP
+2025-08-22 03:26:48,819 - app.api.v1.auth - ERROR - Error verifying OTP: Invalid OTP
+2025-08-22 03:30:28,275 - app.services.auth_service - INFO - OTP for 03036629101: 918935
+2025-08-22 03:30:28,277 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 03:30:41,621 - app.services.auth_service - INFO - OTP for 03036629101: 565519
+2025-08-22 03:30:41,621 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 03:31:10,207 - app.services.auth_service - INFO - OTP for 03036629101: 392297
+2025-08-22 03:31:10,208 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 03:31:41,488 - app.services.auth_service - INFO - OTP for 03036629101: 509266
+2025-08-22 03:31:41,489 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 03:32:23,974 - app.services.auth_service - INFO - OTP for 03036629101: 187612
+2025-08-22 03:32:23,975 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 03:34:11,980 - app.services.auth_service - ERROR - Error creating user: 'password' is an invalid keyword argument for User
+2025-08-22 03:34:12,206 - app.services.auth_service - ERROR - Error verifying OTP: 'password' is an invalid keyword argument for User
+2025-08-22 03:34:12,206 - app.api.v1.auth - ERROR - Error verifying OTP: 'password' is an invalid keyword argument for User
+2025-08-22 03:46:04,648 - app.services.auth_service - INFO - OTP for 03036629101: 789092
+2025-08-22 03:46:04,648 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 03:46:13,488 - app.services.auth_service - INFO - OTP for 03036629101: 832119
+2025-08-22 03:46:13,488 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 03:46:38,444 - app.services.auth_service - ERROR - Error creating user: 'password' is an invalid keyword argument for User
+2025-08-22 03:46:38,660 - app.services.auth_service - ERROR - Error during registration: 'password' is an invalid keyword argument for User
+2025-08-22 03:46:38,661 - app.api.v1.auth - ERROR - Error during registration: 'password' is an invalid keyword argument for User
+2025-08-22 03:48:11,214 - app.services.auth_service - ERROR - Error during registration: User already exists
+2025-08-22 03:48:11,216 - app.api.v1.auth - ERROR - Error during registration: User already exists
+2025-08-22 03:51:25,039 - app.services.auth_service - INFO - OTP for 03036620101: 904781
+2025-08-22 03:51:25,041 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 03:56:51,921 - app.services.auth_service - INFO - OTP for 03036620101: 516653
+2025-08-22 03:56:51,922 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 03:57:36,427 - app.services.auth_service - ERROR - Error verifying OTP: Invalid OTP
+2025-08-22 03:57:36,431 - app.api.v1.auth - ERROR - Error verifying OTP: Invalid OTP
+2025-08-22 03:59:22,605 - app.services.auth_service - INFO - OTP for 03036620101: 677675
+2025-08-22 03:59:22,606 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 04:02:36,270 - app.services.auth_service - INFO - OTP for 03036620101: 310031
+2025-08-22 04:02:36,271 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 04:03:04,359 - app.api.v1.auth - ERROR - Error verifying OTP: 1 validation error for AuthResponse
+data
+  Input should be a valid dictionary [type=dict_type, input_value=TokenResponse(access_toke...r_id='3', role='client'), input_type=TokenResponse]
+    For further information visit https://errors.pydantic.dev/2.11/v/dict_type
+2025-08-22 04:03:11,731 - app.services.auth_service - INFO - OTP for 03036620101: 386777
+2025-08-22 04:03:11,732 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 04:03:37,297 - app.api.v1.auth - ERROR - Error verifying OTP: 1 validation error for AuthResponse
+data
+  Input should be a valid dictionary [type=dict_type, input_value=TokenResponse(access_toke...r_id='3', role='client'), input_type=TokenResponse]
+    For further information visit https://errors.pydantic.dev/2.11/v/dict_type
+2025-08-22 04:04:24,735 - app.services.auth_service - INFO - OTP for 03036620101: 738169
+2025-08-22 04:04:24,735 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 04:08:45,573 - app.services.auth_service - INFO - OTP for 03036629101: 518047
+2025-08-22 04:08:45,574 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 04:09:07,828 - app.services.auth_service - ERROR - Error verifying OTP: Invalid OTP
+2025-08-22 04:09:07,828 - app.api.v1.auth - ERROR - Error verifying OTP: Invalid OTP
+2025-08-22 04:09:35,465 - app.services.auth_service - ERROR - Error verifying OTP: Invalid OTP
+2025-08-22 04:09:35,466 - app.api.v1.auth - ERROR - Error verifying OTP: Invalid OTP
+2025-08-22 04:11:46,684 - app.services.auth_service - INFO - OTP for 03036629101: 513134
+2025-08-22 04:11:46,685 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 04:12:06,669 - app.services.auth_service - INFO - === USER LOGIN SUCCESSFUL ===
+2025-08-22 04:12:06,670 - app.services.auth_service - INFO - User ID: 1
+2025-08-22 04:12:06,670 - app.services.auth_service - INFO - Phone: 03036629101
+2025-08-22 04:12:06,671 - app.services.auth_service - INFO - Name: Test User
+2025-08-22 04:12:06,671 - app.services.auth_service - INFO - Role: client
+2025-08-22 04:12:06,671 - app.services.auth_service - INFO - Points: 0
+2025-08-22 04:12:06,671 - app.services.auth_service - INFO - Access Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxI...
+2025-08-22 04:12:06,671 - app.services.auth_service - INFO - Refresh Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxI...
+2025-08-22 04:12:06,671 - app.services.auth_service - INFO - Token Expires: 30 minutes
+2025-08-22 04:12:06,671 - app.services.auth_service - INFO - ================================
+2025-08-22 04:23:36,745 - app.services.auth_service - INFO - OTP for 03036629101: 864454
+2025-08-22 04:23:36,746 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 04:24:00,411 - app.services.auth_service - ERROR - Error during registration: User already exists
+2025-08-22 04:24:00,411 - app.api.v1.auth - ERROR - Error during registration: User already exists
+2025-08-22 04:27:48,852 - app.services.auth_service - ERROR - Error during registration: User already exists
+2025-08-22 04:27:48,853 - app.api.v1.auth - ERROR - Error during registration: User already exists
+2025-08-22 04:27:57,313 - app.services.auth_service - ERROR - Error during registration: User already exists
+2025-08-22 04:27:57,314 - app.api.v1.auth - ERROR - Error during registration: User already exists
+2025-08-22 04:28:59,126 - app.services.auth_service - INFO - OTP for 03036629101: 161758
+2025-08-22 04:28:59,126 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-22 04:29:26,149 - app.services.auth_service - ERROR - Error during registration: User already exists
+2025-08-22 04:29:26,150 - app.api.v1.auth - ERROR - Error during registration: User already exists
+2025-08-22 04:30:58,477 - app.services.auth_service - ERROR - Error during registration: User already exists
+2025-08-22 04:30:58,486 - app.api.v1.auth - ERROR - Error during registration: User already exists
+2025-08-22 04:31:11,685 - app.services.auth_service - ERROR - Error during registration: User already exists
+2025-08-22 04:31:11,686 - app.api.v1.auth - ERROR - Error during registration: User already exists
+2025-08-22 04:33:20,161 - app.services.auth_service - ERROR - Error during registration: User already exists
+2025-08-22 04:33:20,164 - app.api.v1.auth - ERROR - Error during registration: User already exists
+2025-08-22 04:33:35,365 - app.services.auth_service - ERROR - Error during registration: User already exists
+2025-08-22 04:33:35,367 - app.api.v1.auth - ERROR - Error during registration: User already exists
+2025-08-24 01:53:59,443 - app.services.auth_service - INFO - OTP for 03036629101: 424102
+2025-08-24 01:53:59,443 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 01:54:31,739 - app.services.auth_service - INFO - OTP for 03036629101: 363625
+2025-08-24 01:54:31,741 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:02:06,977 - app.services.auth_service - INFO - OTP for 03036629101: 464189
+2025-08-24 02:02:06,978 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:07:43,243 - app.services.auth_service - INFO - OTP for 03036629101: 541548
+2025-08-24 02:07:43,244 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:16:06,783 - app.services.auth_service - INFO - OTP for 03036629010: 193938
+2025-08-24 02:16:06,785 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:17:16,652 - app.services.auth_service - INFO - OTP for 03036629101: 080689
+2025-08-24 02:17:16,653 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:23:05,270 - app.services.auth_service - INFO - OTP for 03036629101: 575518
+2025-08-24 02:23:05,272 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:25:21,780 - app.services.auth_service - INFO - OTP for 03036629101: 580320
+2025-08-24 02:25:21,782 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:28:58,846 - app.services.auth_service - INFO - OTP for 03036629101: 492147
+2025-08-24 02:28:58,848 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:32:00,809 - app.services.auth_service - INFO - OTP for 03036629101: 456255
+2025-08-24 02:32:00,811 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:34:07,191 - app.services.auth_service - INFO - OTP for 95743905734: 276259
+2025-08-24 02:34:07,193 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:44:09,554 - app.services.auth_service - INFO - OTP for 03036629101: 280467
+2025-08-24 02:44:09,558 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:49:04,340 - app.services.auth_service - INFO - OTP for 03036629101: 764101
+2025-08-24 02:49:04,342 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:51:09,321 - app.services.auth_service - INFO - OTP for 03034983549: 728379
+2025-08-24 02:51:09,323 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:52:56,532 - app.services.auth_service - INFO - OTP for 76858765875: 616749
+2025-08-24 02:52:56,534 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:55:39,754 - app.services.auth_service - INFO - OTP for 47654747647: 748672
+2025-08-24 02:55:39,757 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:56:07,235 - app.services.auth_service - INFO - OTP for 03036629101: 061715
+2025-08-24 02:56:07,236 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:56:29,397 - app.services.auth_service - ERROR - Error verifying OTP: (psycopg2.OperationalError) SSL connection has been closed unexpectedly
+
+[SQL: SELECT users.id AS users_id, users.phone_number AS users_phone_number, users.email AS users_email, users.first_name AS users_first_name, users.last_name AS users_last_name, users.role AS users_role, users.is_verified AS users_is_verified, users.total_points AS users_total_points, users.referral_code AS users_referral_code, users.hashed_password AS users_hashed_password, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.last_login AS users_last_login, users.login_count AS users_login_count 
+FROM users 
+WHERE users.phone_number = %(phone_number_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'phone_number_1': '03036629101', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-24 02:56:29,398 - app.api.v1.auth - ERROR - Error verifying OTP: (psycopg2.OperationalError) SSL connection has been closed unexpectedly
+
+[SQL: SELECT users.id AS users_id, users.phone_number AS users_phone_number, users.email AS users_email, users.first_name AS users_first_name, users.last_name AS users_last_name, users.role AS users_role, users.is_verified AS users_is_verified, users.total_points AS users_total_points, users.referral_code AS users_referral_code, users.hashed_password AS users_hashed_password, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.last_login AS users_last_login, users.login_count AS users_login_count 
+FROM users 
+WHERE users.phone_number = %(phone_number_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'phone_number_1': '03036629101', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-24 02:58:43,502 - app.services.auth_service - INFO - OTP for 03036629101: 426615
+2025-08-24 02:58:43,504 - app.services.auth_service - WARNING - Twilio not configured. OTP only logged to console.
+2025-08-24 02:59:02,941 - app.services.auth_service - INFO - === USER LOGIN SUCCESSFUL ===
+2025-08-24 02:59:02,941 - app.services.auth_service - INFO - User ID: 1
+2025-08-24 02:59:02,941 - app.services.auth_service - INFO - Phone: 03036629101
+2025-08-24 02:59:02,941 - app.services.auth_service - INFO - Name: Test User
+2025-08-24 02:59:02,941 - app.services.auth_service - INFO - Role: client
+2025-08-24 02:59:02,942 - app.services.auth_service - INFO - Points: 0
+2025-08-24 02:59:02,942 - app.services.auth_service - INFO - Access Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxI...
+2025-08-24 02:59:02,942 - app.services.auth_service - INFO - Refresh Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxI...
+2025-08-24 02:59:02,942 - app.services.auth_service - INFO - Token Expires: 30 minutes
+2025-08-24 02:59:02,942 - app.services.auth_service - INFO - ================================

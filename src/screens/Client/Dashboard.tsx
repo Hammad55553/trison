@@ -1,5 +1,5 @@
 // screens/Client/ClientDashboardScreen.tsx
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { 
   View, 
   Text, 
@@ -11,6 +11,7 @@ import {
   FlatList,
   SafeAreaView
 } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import colors from '../../constants/colors';
 import Footer from '../../components/Footer';
 import { useNavigation } from '@react-navigation/native';
@@ -71,7 +72,10 @@ const ClientDashboardScreen = () => {
           </View>
 
           {/* Send Money Card */}
-          <TouchableOpacity style={styles.card}>
+          <TouchableOpacity 
+            style={styles.card}
+            onPress={() => handleNavigation('CashBhejein')}
+          >
             <Text style={styles.cardTitle}>Cash Bhejein</Text>
             <Text style={styles.cardSubtitle}>Khaata</Text>
           </TouchableOpacity>
@@ -155,17 +159,21 @@ const ClientDashboardScreen = () => {
               ))}
             </View>
           </View>
-        </ScrollView>
-        
-        {/* Sticky QR Code Button */}
-        <View style={styles.qrButtonContainer}>
-          <TouchableOpacity 
+
+          {/* QR Code Button Section */}
+          <View style={styles.section}>
+            <View style={styles.qrButtonContainer}>
+                        <TouchableOpacity 
             style={styles.qrButton}
             onPress={() => handleNavigation('ScanQR')}
+            activeOpacity={0.7}
           >
+            <Icon name="qrcode-scan" size={20} color={colors.white} />
             <Text style={styles.qrButtonText}>Scan QR Code</Text>
           </TouchableOpacity>
-        </View>
+            </View>
+          </View>
+        </ScrollView>
         
         {/* Footer Component */}
         <Footer />
@@ -187,7 +195,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 10,
     padding: 15,
-    marginBottom: 120, // Extra space for sticky button and footer
+    marginBottom: 100, // Added space for footer
   },
   card: {
     backgroundColor: colors.white,
@@ -320,28 +328,29 @@ const styles = StyleSheet.create({
     color: colors.textPrimary,
   },
   qrButtonContainer: {
-    position: 'absolute',
-    bottom: 90, // Above the footer
-    left: 0,
-    right: 0,
-    paddingHorizontal: 20,
-    zIndex: 10,
+    alignItems: 'center',
+    paddingVertical: 20,
   },
   qrButton: {
     backgroundColor: colors.orange,
-    borderRadius: 8,
-    paddingVertical: 15,
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    flexDirection: 'row',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowColor: colors.orange,
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 5,
+    shadowRadius: 8,
+    elevation: 6,
+    minWidth: 180,
   },
   qrButtonText: {
     color: colors.white,
     fontSize: 16,
     fontWeight: 'bold',
+    marginLeft: 8,
+    letterSpacing: 0.3,
   },
 });
 

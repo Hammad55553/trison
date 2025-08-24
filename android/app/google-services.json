@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "801059147575",
+    "project_id": "trison-f0424",
+    "storage_bucket": "trison-f0424.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801059147575:android:3d90a538afaf19592b54b2",
+        "android_client_info": {
+          "package_name": "com.trison"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmnunc4AJ6DWiFsWQeDUcUOOyNLBdB7jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

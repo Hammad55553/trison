@@ -11,6 +11,7 @@ import {
   PermissionsAndroid,
   Modal,
 } from 'react-native';
+import Toast from 'react-native-toast-message';
 import { launchImageLibrary } from 'react-native-image-picker';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Footer from '../../components/Footer';
@@ -18,11 +19,12 @@ import colors from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/slices/authSlice';
-import { clearToken } from '../../screens/services/authService';
+import { clearToken } from '../services/authService';
+import { AppDispatch } from '../../redux/store';
 
 const ProfileScreen = () => {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const [profileImage, setProfileImage] = useState<{ uri: string } | null>(null);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
@@ -36,10 +38,10 @@ const ProfileScreen = () => {
   };
 
   const profileOptions = [
-    { id: 1, icon: 'person', title: 'Personal Information' },
-    { id: 2, icon: 'history', title: 'Transaction History' },
-    { id: 3, icon: 'card-giftcard', title: 'Rewards & Points' },
-    { id: 4, icon: 'help', title: 'Help & Support' },
+    { id: 1, icon: 'person', title: 'Personal Information', screen: 'PersonalInformation' },
+    { id: 2, icon: 'history', title: 'Transaction History', screen: 'TransactionHistory' },
+    { id: 3, icon: 'card-giftcard', title: 'Rewards & Points', screen: 'Rewards' },
+    { id: 4, icon: 'help', title: 'Help & Support', screen: 'HelpSupport' },
     { id: 5, icon: 'logout', title: 'Logout', color: colors.orange },
   ];
 
@@ -97,8 +99,11 @@ const ProfileScreen = () => {
     if (optionTitle === 'Logout') {
       setShowLogoutModal(true);
     } else {
-      // Handle other options
-      console.log(optionTitle + ' pressed');
+      // Find the option and navigate to its screen
+      const option = profileOptions.find(opt => opt.title === optionTitle);
+      if (option && option.screen) {
+        navigation.navigate(option.screen as never);
+      }
     }
   };
 
@@ -110,20 +115,28 @@ const ProfileScreen = () => {
       // Dispatch logout action to clear Redux state
       dispatch(logout());
       
-      // Navigate to login screen and clear navigation stack
-      // navigation.reset({
-      //   index: 0,
-      //   routes: [{ name: 'Login' as never }],
-      // });
-      
       // Close the modal
       setShowLogoutModal(false);
       
+      // Navigate to login screen and clear navigation stack
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Login' as never }],
+      });
+      
       // Show success message
-      Alert.alert('Logged out', 'You have been successfully logged out');
+      Toast.show({
+        type: 'success',
+        text1: 'Logged Out',
+        text2: 'You have been successfully logged out',
+      });
     } catch (error) {
       console.error('Logout error:', error);
-      Alert.alert('Error', 'Failed to logout. Please try again.');
+      Toast.show({
+        type: 'error',
+        text1: 'Logout Failed',
+        text2: 'Failed to logout. Please try again.',
+      });
     }
   };
 
@@ -132,6 +145,15 @@ const ProfileScreen = () => {
       <ScrollView style={styles.container}>
         {/* Profile Header */}
         <View style={styles.profileHeader}>
+          <View style={styles.headerTop}>
+            <TouchableOpacity 
+              style={styles.logoutButton}
+              onPress={() => setShowLogoutModal(true)}
+            >
+              <Icon name="logout" size={20} color={colors.white} />
+              <Text style={styles.logoutButtonText}>Logout</Text>
+            </TouchableOpacity>
+          </View>
           <View style={styles.avatarContainer}>
             <Image
               source={profileImage || require('../../assets/images/TRISON.jpg')}
@@ -213,7 +235,7 @@ const ProfileScreen = () => {
                 <Text style={styles.cancelButtonText}>Cancel</Text>
               </TouchableOpacity>
               <TouchableOpacity 
-                style={[styles.modalButton, styles.logoutButton]}
+                style={[styles.modalButton, styles.modalLogoutButton]}
                 onPress={handleLogout}
               >
                 <Text style={styles.logoutButtonText}>Logout</Text>
@@ -242,6 +264,19 @@ const styles = StyleSheet.create({
   profileHeader: {
     alignItems: 'center',
     marginBottom: 20,
+  },
+  headerTop: {
+    width: '100%',
+    alignItems: 'flex-end',
+    marginBottom: 15,
+  },
+  logoutButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.orange,
+    paddingHorizontal: 15,
+    paddingVertical: 8,
+    borderRadius: 20,
   },
   avatarContainer: {
     position: 'relative',
@@ -392,7 +427,7 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderRightColor: '#f0f0f0',
   },
-  logoutButton: {
+  modalLogoutButton: {
     backgroundColor: colors.orange,
   },
   cancelButtonText: {

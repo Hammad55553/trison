@@ -11,6 +11,8 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import colors from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
+import Header from '../../components/Header';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 interface ScanItem {
   id: string;
@@ -123,17 +125,16 @@ const DailyScanHistoryScreen = () => {
   );
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-            <Icon name="arrow-left" size={26} color={colors.textPrimary} />
-          </TouchableOpacity>
-          <Text style={styles.headerTitle}>Daily Scan History</Text>
+    <View style={styles.safeArea}>
+      <Header 
+        title="Daily Scan History"
+        rightComponent={
           <TouchableOpacity style={styles.addButton}>
             <Icon name="plus" size={24} color={colors.white} />
           </TouchableOpacity>
-        </View>
+        }
+      />
+      <View style={styles.container}>
 
         <View style={styles.toggleContainer}>
           <TouchableOpacity 
@@ -171,7 +172,7 @@ const DailyScanHistoryScreen = () => {
           <Icon name="qrcode-scan" size={28} color={colors.white} />
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -182,30 +183,14 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingHorizontal: 16,
+    paddingHorizontal: wp('4%'),
+    bottom: hp('10%'),
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 36,
-    marginBottom: 24,
-  },
-  backButton: {
-    padding: 8,
-  },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: colors.textPrimary,
-    flex: 1,
-    textAlign: 'center',
-    marginLeft: -24, // To center the title considering the back button
-  },
+
   addButton: {
     backgroundColor: colors.primary,
     width: 40,
-    height: 40,
+    height: 60,
     borderRadius: 20,
     right: 10,
     justifyContent: 'center',

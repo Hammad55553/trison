@@ -1,18 +1,18 @@
 // redux/store.ts
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './slices/authSlice';
-// import other reducers here…
+import productReducer from './slices/productSlice';
+import orderReducer from './slices/orderSlice';
+import userReducer from './slices/userSlice';
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     auth: authReducer,
-    // your other slices…
+    products: productReducer,
+    orders: orderReducer,
+    user: userReducer,
   },
 });
 
-// This infers the “shape” of your root state object
 export type RootState = ReturnType<typeof store.getState>;
-// This infers the dispatch type
 export type AppDispatch = typeof store.dispatch;
-
-export default store;

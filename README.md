@@ -1,98 +1,232 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Trison Solar - React Native + FastAPI Application
 
-# Getting Started
+A complete mobile application with React Native frontend and FastAPI backend for solar energy management.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🏗️ Architecture
 
-## Step 1: Start Metro
+- **Frontend**: React Native (TypeScript)
+- **Backend**: FastAPI (Python)
+- **Database**: PostgreSQL (Neon.tech)
+- **Authentication**: JWT with OTP verification
+- **State Management**: Redux Toolkit
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🚀 Quick Start
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Prerequisites
 
-```sh
-# Using npm
-npm start
+- Python 3.8+
+- Node.js 18+
+- React Native CLI
+- Redis (optional, for OTP storage)
 
-# OR using Yarn
-yarn start
+### 1. Clone and Setup
+
+```bash
+git clone <repository-url>
+cd trison
 ```
 
-## Step 2: Build and run your app
+### 2. Environment Configuration
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+# Copy environment template
+cp env.example .env
 
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+# Edit .env file with your configuration
+# Update SECRET_KEY and other values as needed
 ```
 
-### iOS
+### 3. Start Both Services
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+```bash
+# Make startup script executable
+chmod +x start.sh
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+# Run both FastAPI and React Native
+./start.sh
 ```
 
-Then, and every time you update your native dependencies, run:
+This will:
+- Create Python virtual environment
+- Install Python dependencies
+- Start FastAPI backend on http://localhost:8000
+- Start React Native Metro bundler
+- Open API documentation at http://localhost:8000/docs
 
-```sh
-bundle exec pod install
+### 4. Run on Device/Simulator
+
+```bash
+# For Android
+npx react-native run-android
+
+# For iOS
+npx react-native run-ios
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## 📱 Features
 
-```sh
-# Using npm
-npm run ios
+### Authentication
+- Phone number + OTP login
+- JWT token management
+- Automatic token refresh
+- Secure logout
 
-# OR using Yarn
-yarn ios
+### User Management
+- User registration
+- Profile management
+- Points system
+- Referral codes
+
+### QR Code Scanning
+- QR code generation
+- Scan and verify
+- Points earning
+
+## 🔧 API Endpoints
+
+### Authentication
+- `POST /api/v1/auth/send-otp` - Send OTP
+- `POST /api/v1/auth/verify-otp` - Verify OTP
+- `POST /api/v1/auth/login` - Login
+- `POST /api/v1/auth/register` - Register
+- `POST /api/v1/auth/refresh` - Refresh token
+- `POST /api/v1/auth/logout` - Logout
+- `GET /api/v1/auth/me` - Get current user
+
+### Documentation
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+
+## 🗄️ Database Schema
+
+### Users Table
+- `id` - Primary key
+- `phone_number` - Unique phone number
+- `email` - Optional email
+- `first_name`, `last_name` - User names
+- `role` - User role (client, retailer, admin)
+- `is_verified` - Phone verification status
+- `total_points` - Earned points
+- `referral_code` - Unique referral code
+- `created_at`, `updated_at` - Timestamps
+- `last_login` - Last login time
+- `login_count` - Number of logins
+
+## 🔐 Security Features
+
+- JWT token authentication
+- Password hashing with bcrypt
+- OTP verification for phone numbers
+- Token blacklisting on logout
+- Secure password storage
+
+## 📦 Dependencies
+
+### Backend (Python)
+- FastAPI - Web framework
+- SQLAlchemy - ORM
+- PostgreSQL - Database
+- Redis - Cache/OTP storage
+- JWT - Authentication
+- Pydantic - Data validation
+
+### Frontend (React Native)
+- React Native - Mobile framework
+- Redux Toolkit - State management
+- AsyncStorage - Local storage
+- React Navigation - Navigation
+- TypeScript - Type safety
+
+## 🛠️ Development
+
+### Backend Development
+```bash
+# Activate virtual environment
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run FastAPI with auto-reload
+python main.py
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### Frontend Development
+```bash
+# Install Node dependencies
+npm install
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+# Start Metro bundler
+npx react-native start
 
-## Step 3: Modify your app
+# Run on device/simulator
+npx react-native run-android
+npx react-native run-ios
+```
 
-Now that you have successfully run the app, let's make changes!
+## 🧪 Testing
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+```bash
+# Backend tests
+pytest
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+# Frontend tests
+npm test
+```
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 📊 Monitoring
 
-## Congratulations! :tada:
+- Health check: http://localhost:8000/health
+- API status: http://localhost:8000/
+- Logs are displayed in console
 
-You've successfully run and modified your React Native App. :partying_face:
+## 🚨 Troubleshooting
 
-### Now what?
+### Common Issues
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+1. **Port 8000 already in use**
+   ```bash
+   lsof -ti:8000 | xargs kill -9
+   ```
 
-# Troubleshooting
+2. **Metro bundler issues**
+   ```bash
+   npx react-native start --reset-cache
+   ```
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+3. **Database connection issues**
+   - Check Neon.tech connection string
+   - Verify network connectivity
+   - Check SSL requirements
 
-# Learn More
+4. **Redis connection issues**
+   - Start Redis service
+   - Check Redis configuration
 
-To learn more about React Native, take a look at the following resources:
+## 📝 Environment Variables
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# trison
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `SECRET_KEY` | JWT secret key | Required |
+| `DATABASE_URL` | PostgreSQL connection | Neon.tech URL |
+| `REDIS_URL` | Redis connection | localhost:6379 |
+| `DEBUG` | Debug mode | false |
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🆘 Support
+
+For support and questions:
+- Create an issue in the repository
+- Check the API documentation
+- Review the troubleshooting section
