@@ -73,3 +73,20 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Backend Python files
+*.py
+*.pyc
+__pycache__/
+venv/
+env/
+.env
+requirements.txt
+setup.py
+main.py
+test_api.py
+logs/
+app/
+start.sh
+docker-compose.yml
+Dockerfile
